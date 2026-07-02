@@ -1,9 +1,11 @@
-# Sabai Flashcards
+# EzEng
 
 A warm, simple flashcard web app that helps Burmese speakers learn English
 **words, phrases, and idioms**. Tap a card to flip between English and Burmese;
 switch the practice direction (EN → MY or MY → EN); no login required for
-learners. An admin area manages the vocabulary.
+learners. The deck is **shuffled automatically on load** so practice never
+falls into the same order twice. An admin area manages the vocabulary, with
+one-click pronunciation lookup (IPA + audio) from a public dictionary.
 
 ## Tech stack
 
@@ -11,6 +13,7 @@ learners. An admin area manages the vocabulary.
 - **Tailwind CSS v4** — warm cream/terracotta theme
 - **Framer Motion** — 3D card flip
 - **Supabase (Postgres)** — database, auth, and row-level security
+- **Free Dictionary API** — pronunciation (IPA + audio) for words
 - **Noto Sans Myanmar** — proper Burmese rendering
 
 ## Getting started
@@ -45,10 +48,11 @@ lib/
   types.ts            Card / CardType / Direction
   cards.ts            Data access (Supabase → sample fallback)
   sample-data.ts      Offline demo deck
+  pronunciation.ts    Dictionary lookup + audio playback
   supabase/           Browser + server clients, env detection
 components/
   Flashcard.tsx       Flip animation + card faces
-  PracticeDeck.tsx    Mode picker, direction toggle, navigation
+  PracticeDeck.tsx    Mode picker, direction toggle, shuffle-on-load, navigation
   admin/              LoginForm, CardManager (CRUD)
 supabase/schema.sql   Database schema + RLS policies
 proxy.ts              Refreshes the Supabase auth session
@@ -56,8 +60,8 @@ proxy.ts              Refreshes the Supabase auth session
 
 ## Ideas for later phases
 
-- Audio pronunciation (Supabase Storage)
+- Self-hosted audio uploads (Supabase Storage) for terms the dictionary lacks
 - Spaced repetition (SRS) with per-user progress → optional user accounts
-- Bulk CSV import in the admin
+- Bulk CSV import in the admin (a starter deck lives in `supabase/cards-seed.csv`)
 - "Known / still learning" tracking via local storage
 - PWA / offline mode
