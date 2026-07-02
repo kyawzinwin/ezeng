@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sabai Flashcards
 
-## Getting Started
+A warm, simple flashcard web app that helps Burmese speakers learn English
+**words, phrases, and idioms**. Tap a card to flip between English and Burmese;
+switch the practice direction (EN → MY or MY → EN); no login required for
+learners. An admin area manages the vocabulary.
 
-First, run the development server:
+## Tech stack
+
+- **Next.js 16** (App Router) + **React 19** + **TypeScript**
+- **Tailwind CSS v4** — warm cream/terracotta theme
+- **Framer Motion** — 3D card flip
+- **Supabase (Postgres)** — database, auth, and row-level security
+- **Noto Sans Myanmar** — proper Burmese rendering
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. The app runs immediately on **sample data**
+(`lib/sample-data.ts`) so you can try it before setting up a database.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Connecting Supabase
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create a project at [supabase.com](https://supabase.com).
+2. In the dashboard: **SQL → New query**, paste `supabase/schema.sql`, run it.
+   This creates the `cards` table, an updated-at trigger, and RLS policies
+   (public read, authenticated write) — plus a few seed rows.
+3. Copy `.env.local.example` to `.env.local` and fill in the URL + anon key
+   from **Project Settings → API**.
+4. Create an admin login: **Authentication → Users → Add user** (email +
+   password). Any authenticated user can manage cards in Phase 1.
+5. Restart `npm run dev`. The app now reads live data, and `/admin` works.
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  page.tsx            Public practice deck
+  admin/page.tsx      Auth-gated card management
+lib/
+  types.ts            Card / CardType / Direction
+  cards.ts            Data access (Supabase → sample fallback)
+  sample-data.ts      Offline demo deck
+  supabase/           Browser + server clients, env detection
+components/
+  Flashcard.tsx       Flip animation + card faces
+  PracticeDeck.tsx    Mode picker, direction toggle, navigation
+  admin/              LoginForm, CardManager (CRUD)
+supabase/schema.sql   Database schema + RLS policies
+proxy.ts              Refreshes the Supabase auth session
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Ideas for later phases
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Audio pronunciation (Supabase Storage)
+- Spaced repetition (SRS) with per-user progress → optional user accounts
+- Bulk CSV import in the admin
+- "Known / still learning" tracking via local storage
+- PWA / offline mode

@@ -1,0 +1,208 @@
+Column1,Column2,Column3,Column4,Column5,Column6,Column7
+type,english,burmese,example_en,example_my,pronunciation,category
+word,generous,ရက်ရောသော,She is generous with her time.,သူမသည် သူမ၏အချိန်ကို ရက်ရောစွာ ပေးတတ်သည်။,/ˈdʒɛn.ər.əs/,personality
+word,curious,စူးစမ်းလိုစိတ်ရှိသော,Children are naturally curious.,ကလေးများသည် သဘာဝအားဖြင့် စူးစမ်းလိုစိတ်ရှိကြသည်။,/ˈkjʊə.ri.əs/,personality
+word,honest,ရိုးသားသော,He is always honest with his friends.,သူသည် သူ၏မိတ်ဆွေများအပေါ် အမြဲရိုးသားသည်။,/ˈɒn.ɪst/,personality
+word,brave,ရဲရင့်သော,The brave firefighter saved the child.,ရဲရင့်သော မီးသတ်သမားသည် ကလေးကို ကယ်တင်ခဲ့သည်။,/breɪv/,personality
+word,patient,စိတ်ရှည်သော,A good teacher must be patient.,ဆရာကောင်းတစ်ယောက်သည် စိတ်ရှည်ရမည်။,/ˈpeɪ.ʃənt/,personality
+word,lazy,ပျင်းရိသော,He was too lazy to clean his room.,သူသည် အခန်းသန့်ရှင်းရေးလုပ်ရန် အလွန်ပျင်းရိသည်။,/ˈleɪ.zi/,personality
+word,diligent,ဝီရိယရှိသော,She is a diligent student who never gives up.,သူမသည် ဘယ်တော့မှ လက်မလျှော့သည် ဝီရိယရှိသောကျောင်းသူ ဖြစ်သည်။,/ˈdɪl.ɪ.dʒənt/,personality
+word,humble,နှိမ့်ချသော,"Despite his success, he stayed humble.",အောင်မြင်သော်လည်း သူသည် နှိမ့်ချစွာ နေထိုင်သည်။,/ˈhʌm.bəl/,personality
+word,arrogant,မာနကြီးသော,Nobody likes his arrogant attitude.,သူ၏ မာနကြီးသောစိတ်ထားကို ဘယ်သူမှ မကြိုက်ပါ။,/ˈær.ə.ɡənt/,personality
+word,cheerful,ရွှင်လန်းသော,Her cheerful smile brightened the room.,သူမ၏ ရွှင်လန်းသောအပြုံးက အခန်းကို လင်းလက်စေသည်။,/ˈtʃɪə.fəl/,personality
+word,reliable,စိတ်ချရသော,He is a reliable friend in hard times.,သူသည် အခက်အခဲကာလတွင် စိတ်ချရသောမိတ်ဆွေဖြစ်သည်။,/rɪˈlaɪ.ə.bəl/,personality
+word,stubborn,ခေါင်းမာသော,She is too stubborn to admit her mistake.,သူမသည် အမှားကို ဝန်ခံရန် အလွန်ခေါင်းမာသည်။,/ˈstʌb.ən/,personality
+word,polite,ယဉ်ကျေးသော,Always be polite to your elders.,အသက်ကြီးသူများကို အမြဲယဉ်ကျေးပါ။,/pəˈlaɪt/,personality
+word,rude,ရိုင်းစိုင်းသော,It is rude to interrupt others.,သူတစ်ပါးစကားကို ဖြတ်ပြောခြင်းသည် ရိုင်းစိုင်းသည်။,/ruːd/,personality
+word,ambitious,ရည်မှန်းချက်ကြီးသော,She is ambitious about her career.,သူမသည် အလုပ်အကိုင်နှင့်ပတ်သက်၍ ရည်မှန်းချက်ကြီးသည်။,/æmˈbɪʃ.əs/,personality
+word,shy,ရှက်တတ်သော,He was too shy to speak in class.,သူသည် အတန်းထဲတွင် စကားပြောရန် အလွန်ရှက်တတ်သည်။,/ʃaɪ/,personality
+word,confident,ယုံကြည်မှုရှိသော,She felt confident before the interview.,သူမသည် အင်တာဗျူးမတိုင်မီ ယုံကြည်မှုရှိသည်။,/ˈkɒn.fɪ.dənt/,personality
+word,loyal,သစ္စာရှိသော,A dog is a loyal companion.,ခွေးသည် သစ္စာရှိသော အဖော်ဖြစ်သည်။,/ˈlɔɪ.əl/,personality
+word,selfish,တစ်ကိုယ်ကောင်းဆန်သော,Don't be selfish; share with others.,တစ်ကိုယ်ကောင်းမဆန်ပါနှင့်၊ သူတစ်ပါးနှင့် မျှဝေပါ။,/ˈsel.fɪʃ/,personality
+word,gentle,နူးညံ့သိမ်မွေ့သော,She has a gentle voice.,သူမတွင် နူးညံ့သိမ်မွေ့သောအသံ ရှိသည်။,/ˈdʒen.təl/,personality
+word,happy,ပျော်ရွှင်သော,We were happy to see them again.,သူတို့ကို ပြန်တွေ့ရ၍ ကျွန်ုပ်တို့ ပျော်ရွှင်ခဲ့သည်။,/ˈhæp.i/,emotions
+word,sad,ဝမ်းနည်းသော,She felt sad after the news.,သတင်းကြားပြီးနောက် သူမ ဝမ်းနည်းခဲ့သည်။,/sæd/,emotions
+word,angry,ဒေါသထွက်သော,He was angry about the delay.,နှောင့်နှေးမှုကြောင့် သူ ဒေါသထွက်ခဲ့သည်။,/ˈæŋ.ɡri/,emotions
+word,afraid,ကြောက်ရွံ့သော,She is afraid of the dark.,သူမသည် အမှောင်ကို ကြောက်ရွံ့သည်။,/əˈfreɪd/,emotions
+word,excited,စိတ်လှုပ်ရှားသော,The kids were excited about the trip.,ကလေးများသည် ခရီးအတွက် စိတ်လှုပ်ရှားနေကြသည်။,/ɪkˈsaɪ.tɪd/,emotions
+word,bored,ငြီးငွေ့သော,I was bored during the long lecture.,ရှည်လျားသောဟောပြောပွဲအတွင်း ကျွန်ုပ် ငြီးငွေ့ခဲ့သည်။,/bɔːd/,emotions
+word,proud,ဂုဏ်ယူသော,Her parents are proud of her.,သူမ၏မိဘများသည် သူမကို ဂုဏ်ယူကြသည်။,/praʊd/,emotions
+word,grateful,ကျေးဇူးတင်သော,I am grateful for your help.,သင်၏အကူအညီအတွက် ကျွန်ုပ် ကျေးဇူးတင်ပါသည်။,/ˈɡreɪt.fəl/,emotions
+word,lonely,အထီးကျန်သော,He felt lonely in the new city.,မြို့သစ်တွင် သူသည် အထီးကျန်သည်ဟု ခံစားရသည်။,/ˈloʊn.li/,emotions
+word,nervous,ကြောက်ရွံ့တုန်လှုပ်သော,She felt nervous before the exam.,စာမေးပွဲမတိုင်မီ သူမ ကြောက်ရွံ့တုန်လှုပ်နေခဲ့သည်။,/ˈnɜː.vəs/,emotions
+word,calm,တည်ငြိမ်သော,Stay calm during an emergency.,အရေးပေါ်အခြေအနေတွင် တည်ငြိမ်စွာနေပါ။,/kɑːm/,emotions
+word,surprised,အံ့အားသင့်သော,We were surprised by the gift.,လက်ဆောင်ကြောင့် ကျွန်ုပ်တို့ အံ့အားသင့်ခဲ့သည်။,/səˈpraɪzd/,emotions
+word,disappointed,စိတ်ပျက်သော,He was disappointed with the result.,ရလဒ်ကြောင့် သူ စိတ်ပျက်ခဲ့သည်။,/ˌdɪs.əˈpɔɪn.tɪd/,emotions
+word,embarrassed,ရှက်ရွံ့သော,She was embarrassed by her mistake.,သူမ၏အမှားကြောင့် သူမ ရှက်ရွံ့ခဲ့သည်။,/ɪmˈbær.əst/,emotions
+word,content,ရောင့်ရဲသော,He is content with his simple life.,သူသည် သူ၏ရိုးရှင်းသောဘဝနှင့် ရောင့်ရဲသည်။,/kənˈtent/,emotions
+word,improve,တိုးတက်အောင်လုပ်သည်,Practice will improve your English.,လေ့ကျင့်ခြင်းက သင်၏အင်္ဂလိပ်စာကို တိုးတက်စေမည်။,/ɪmˈpruːv/,everyday
+word,decide,ဆုံးဖြတ်သည်,We need to decide today.,ကျွန်ုပ်တို့ ဒီနေ့ ဆုံးဖြတ်ရန်လိုသည်။,/dɪˈsaɪd/,everyday
+word,remember,မှတ်မိသည်,Do you remember his name?,သူ၏နာမည်ကို သင်မှတ်မိသလား။,/rɪˈmem.bər/,everyday
+word,forget,မေ့သည်,Don't forget to lock the door.,တံခါးသော့ခတ်ရန် မမေ့ပါနှင့်။,/fərˈɡet/,everyday
+word,explain,ရှင်းပြသည်,Can you explain this rule?,ဒီစည်းမျဉ်းကို ရှင်းပြနိုင်မလား။,/ɪkˈspleɪn/,everyday
+word,suggest,အကြံပြုသည်,I suggest we leave early.,စောစောထွက်ဖို့ ကျွန်ုပ် အကြံပြုပါသည်။,/səˈdʒest/,everyday
+word,borrow,ချေးယူသည် / ငှားသည်,May I borrow your pen?,သင့်ဘောပင်ကို ငှားလို့ရမလား။,/ˈbɒr.oʊ/,everyday
+word,lend,ချေးပေးသည်,He lent me some money.,သူသည် ကျွန်ုပ်အား ငွေအနည်းငယ် ချေးပေးခဲ့သည်။,/lend/,everyday
+word,accept,လက်ခံသည်,She accepted the job offer.,သူမသည် အလုပ်ကမ်းလှမ်းချက်ကို လက်ခံခဲ့သည်။,/əkˈsept/,everyday
+word,refuse,ငြင်းဆန်သည်,He refused to answer the question.,သူသည် မေးခွန်းကို ဖြေဆိုရန် ငြင်းဆန်ခဲ့သည်။,/rɪˈfjuːz/,everyday
+word,arrive,ရောက်ရှိသည်,The train will arrive at noon.,ရထားသည် မွန်းတည့်ချိန်တွင် ရောက်ရှိလာမည်။,/əˈraɪv/,everyday
+word,purchase,ဝယ်ယူသည်,She purchased a new laptop.,သူမသည် လက်ပ်တော့အသစ်တစ်လုံး ဝယ်ယူခဲ့သည်။,/ˈpɜː.tʃəs/,everyday
+word,deliver,ပို့ဆောင်သည်,They deliver food to your door.,သူတို့သည် အစားအစာကို သင့်တံခါးဝအထိ ပို့ဆောင်ပေးသည်။,/dɪˈlɪv.ər/,everyday
+word,repair,ပြုပြင်သည်,He can repair old watches.,သူသည် နာရီအဟောင်းများကို ပြုပြင်နိုင်သည်။,/rɪˈpeər/,everyday
+word,discover,ရှာဖွေတွေ့ရှိသည်,Scientists discovered a new planet.,သိပ္ပံပညာရှင်များသည် ဂြိုဟ်အသစ်တစ်ခုကို ရှာဖွေတွေ့ရှိခဲ့ကြသည်။,/dɪˈskʌv.ər/,everyday
+word,protect,ကာကွယ်သည်,Parents protect their children.,မိဘများသည် သားသမီးများကို ကာကွယ်ကြသည်။,/prəˈtekt/,everyday
+word,increase,တိုးမြင့်လာသည်,Prices continue to increase.,ဈေးနှုန်းများ ဆက်လက်တိုးမြင့်လာနေသည်။,/ɪnˈkriːs/,everyday
+word,decrease,လျော့ကျသွားသည်,Sales decreased last month.,အရောင်းအားသည် ပြီးခဲ့သောလက လျော့ကျသွားခဲ့သည်။,/dɪˈkriːs/,everyday
+word,celebrate,ကျင်းပသည်,We celebrate the new year together.,ကျွန်ုပ်တို့ နှစ်သစ်ကူးကို အတူတကွ ကျင်းပကြသည်။,/ˈsel.ə.breɪt/,everyday
+word,deadline,သတ်မှတ်ရက်,The deadline is next Friday.,သတ်မှတ်ရက်မှာ လာမည့်သောကြာနေ့ဖြစ်သည်။,/ˈded.laɪn/,business
+word,meeting,အစည်းအဝေး,The meeting starts at nine.,အစည်းအဝေးသည် ကိုးနာရီတွင် စတင်သည်။,/ˈmiː.tɪŋ/,business
+word,schedule,အချိန်ဇယား,Let me check my schedule.,ကျွန်ုပ်၏အချိန်ဇယားကို စစ်ကြည့်ပါရစေ။,/ˈskedʒ.uːl/,business
+word,budget,ဘတ်ဂျက်,We must stay within budget.,ကျွန်ုပ်တို့ ဘတ်ဂျက်အတွင်း နေထိုင်ရမည်။,/ˈbʌdʒ.ɪt/,business
+word,profit,အမြတ်အစွန်း,The company made a big profit.,ကုမ္ပဏီသည် အမြတ်အစွန်း အများအပြား ရရှိခဲ့သည်။,/ˈprɒf.ɪt/,business
+word,customer,ဖောက်သည်,The customer is always right.,ဖောက်သည်သည် အမြဲမှန်ကန်သည်။,/ˈkʌs.tə.mər/,business
+word,employee,ဝန်ထမ်း,She is a hardworking employee.,သူမသည် ကြိုးစားသောဝန်ထမ်းတစ်ဦးဖြစ်သည်။,/ɪmˈplɔɪ.iː/,business
+word,salary,လစာ,He gets his salary monthly.,သူသည် လစဉ်လစာရရှိသည်။,/ˈsæl.ər.i/,business
+word,contract,စာချုပ်,Please sign the contract here.,စာချုပ်ကို ဤနေရာတွင် လက်မှတ်ရေးထိုးပါ။,/ˈkɒn.trækt/,business
+word,negotiate,ညှိနှိုင်းသည်,They negotiated a better price.,သူတို့သည် ဈေးနှုန်းပိုကောင်းရန် ညှိနှိုင်းခဲ့ကြသည်။,/nɪˈɡoʊ.ʃi.eɪt/,business
+word,promote,ရာထူးတိုးမြှင့်ခံရ,She was promoted to manager.,သူမသည် မန်နေဂျာအဖြစ် ရာထူးတိုးမြှင့်ခံရသည်။,/prəˈmoʊt/,business
+word,resign,နုတ်ထွက်သည်,He decided to resign from his job.,သူသည် အလုပ်မှ နုတ်ထွက်ရန် ဆုံးဖြတ်ခဲ့သည်။,/rɪˈzaɪn/,business
+word,invoice,ငွေတောင်းခံလွှာ,Please send the invoice by email.,ငွေတောင်းခံလွှာကို အီးမေးလ်ဖြင့် ပို့ပေးပါ။,/ˈɪn.vɔɪs/,business
+word,luggage,ခရီးဆောင်အိတ်,Don't leave your luggage unattended.,သင်၏ခရီးဆောင်အိတ်ကို လူလစ်မထားပါနှင့်။,/ˈlʌɡ.ɪdʒ/,travel
+word,passport,နိုင်ငံကူးလက်မှတ်,Keep your passport in a safe place.,သင်၏နိုင်ငံကူးလက်မှတ်ကို လုံခြုံသောနေရာတွင် ထားပါ။,/ˈpɑːs.pɔːt/,travel
+word,reservation,ကြိုတင်မှာယူမှု,I made a reservation for two.,ကျွန်ုပ် နှစ်ယောက်အတွက် ကြိုတင်မှာယူထားသည်။,/ˌrez.əˈveɪ.ʃən/,travel
+word,departure,ထွက်ခွာချိန်,Our departure was delayed by an hour.,ကျွန်ုပ်တို့၏ထွက်ခွာချိန်သည် တစ်နာရီ နှောင့်နှေးခဲ့သည်။,/dɪˈpɑː.tʃər/,travel
+word,arrival,ရောက်ရှိချိန်,The arrival time is six in the evening.,ရောက်ရှိချိန်မှာ ညနေခြောက်နာရီဖြစ်သည်။,/əˈraɪ.vəl/,travel
+word,destination,ဦးတည်ရာ,Our destination is Mandalay.,ကျွန်ုပ်တို့၏ဦးတည်ရာမှာ မန္တလေးဖြစ်သည်။,/ˌdes.tɪˈneɪ.ʃən/,travel
+word,souvenir,အမှတ်တရပစ္စည်း,She bought a souvenir from the market.,သူမသည် ဈေးမှ အမှတ်တရပစ္စည်းတစ်ခု ဝယ်ခဲ့သည်။,/ˌsuː.vənˈɪər/,travel
+word,crowded,လူစည်ကားသော,The station was very crowded.,ဘူတာရုံသည် အလွန်လူစည်ကားခဲ့သည်။,/ˈkraʊ.dɪd/,travel
+word,delay,နှောင့်နှေးမှု,There was a long delay at the airport.,လေဆိပ်တွင် ကြာရှည်သောနှောင့်နှေးမှု ရှိခဲ့သည်။,/dɪˈleɪ/,travel
+word,itinerary,ခရီးစဉ်,Please share the trip itinerary.,ခရီးစဉ်ကို မျှဝေပေးပါ။,/aɪˈtɪn.ər.er.i/,travel
+word,delicious,အရသာရှိသော,This soup is really delicious.,ဒီဟင်းချိုသည် တကယ်ကို အရသာရှိသည်။,/dɪˈlɪʃ.əs/,food
+word,spicy,စပ်သော,Burmese curry can be very spicy.,မြန်မာဟင်းသည် အလွန်စပ်နိုင်သည်။,/ˈspaɪ.si/,food
+word,sour,ချဉ်သော,The mango is still sour.,သရက်သီးသည် အခုထိ ချဉ်နေသေးသည်။,/saʊər/,food
+word,bitter,ခါးသော,This medicine tastes bitter.,ဒီဆေးသည် ခါးသောအရသာ ရှိသည်။,/ˈbɪt.ər/,food
+word,sweet,ချိုသော,The tea is too sweet for me.,လက်ဖက်ရည်သည် ကျွန်ုပ်အတွက် အလွန်ချိုသည်။,/swiːt/,food
+word,exhausted,ပင်ပန်းနွမ်းနယ်သော,I was exhausted after the long walk.,ကြာရှည်လမ်းလျှောက်ပြီးနောက် ကျွန်ုပ် ပင်ပန်းနွမ်းနယ်ခဲ့သည်။,/ɪɡˈzɔːs.tɪd/,health
+word,recover,ပြန်လည်ကောင်းမွန်လာသည်,She recovered quickly from the flu.,သူမသည် တုပ်ကွေးမှ လျင်မြန်စွာ ပြန်လည်ကောင်းမွန်လာသည်။,/rɪˈkʌv.ər/,health
+word,medicine,ဆေးဝါး,Take this medicine after meals.,ဒီဆေးကို အစားစားပြီးနောက် သောက်ပါ။,/ˈmed.ɪ.sən/,health
+word,appointment,ဆရာဝန်နှင့်တွေ့ဆုံချိန်,I have a doctor's appointment today.,ကျွန်ုပ် ဒီနေ့ ဆရာဝန်နှင့်တွေ့ဆုံချိန်ရှိသည်။,/əˈpɔɪnt.mənt/,health
+word,injury,ဒဏ်ရာ,He recovered from a serious injury.,သူသည် ပြင်းထန်သောဒဏ်ရာမှ ပြန်လည်ကောင်းမွန်လာသည်။,/ˈɪn.dʒər.i/,health
+word,thoughtful,စဉ်းစားဆင်ခြင်တတ်သော,It was thoughtful of you to call.,ဖုန်းဆက်ပေးတာ သင့်ရဲ့ စဉ်းစားဆင်ခြင်တတ်မှုပါပဲ။,/ˈθɔːt.fəl/,personality
+word,clever,လိမ္မာပါးနပ်သော,She found a clever solution.,သူမသည် လိမ္မာပါးနပ်သောဖြေရှင်းနည်းကို ရှာတွေ့ခဲ့သည်။,/ˈklev.ər/,personality
+word,jealous,မနာလိုသော,He was jealous of his brother's success.,သူသည် အစ်ကို၏အောင်မြင်မှုကို မနာလိုခဲ့သည်။,/ˈdʒel.əs/,emotions
+word,anxious,စိုးရိမ်သောက,She felt anxious about the future.,သူမသည် အနာဂတ်အတွက် စိုးရိမ်သောကရှိခဲ့သည်။,/ˈæŋk.ʃəs/,emotions
+phrase,on the other hand,တစ်ဖက်တွင်မူ,"It is cheap; on the other hand, the quality is poor.",ဒါက ဈေးပေါတယ်၊ တစ်ဖက်တွင်မူ အရည်အသွေးက ညံ့တယ်။,,linking
+phrase,make up your mind,ဆုံးဖြတ်ချက်ချပါ,Please make up your mind before we leave.,မထွက်ခွာမီ ဆုံးဖြတ်ချက်ချပါ။,,everyday
+phrase,as far as I know,ကျွန်တော်သိသလောက်,"As far as I know, the shop is closed today.",ကျွန်တော်သိသလောက် ဆိုင်က ဒီနေ့ပိတ်တယ်။,,linking
+phrase,by the way,စကားမစပ်,"By the way, did you call her?",စကားမစပ်၊ သူမကို ဖုန်းဆက်ပြီးပြီလား။,,everyday
+phrase,in my opinion,ကျွန်တော့်အမြင်အရ,"In my opinion, we should wait.",ကျွန်တော့်အမြင်အရ ကျွန်တော်တို့ စောင့်သင့်တယ်။,,linking
+phrase,as a result,ရလဒ်အနေဖြင့်,"He studied hard; as a result, he passed.",သူ ကြိုးစားခဲ့တယ်၊ ရလဒ်အနေဖြင့် သူ အောင်သွားတယ်။,,linking
+phrase,for example,ဥပမာအားဖြင့်,"Many fruits, for example mangoes, are sweet.",အသီးအများအပြား၊ ဥပမာအားဖြင့် သရက်သီးတို့သည် ချိုတယ်။,,linking
+phrase,in other words,တစ်နည်းအားဖြင့်,"In other words, we cannot go.",တစ်နည်းအားဖြင့် ကျွန်တော်တို့ မသွားနိုင်ဘူး။,,linking
+phrase,at the moment,လက်ရှိအချိန်တွင်,I am busy at the moment.,လက်ရှိအချိန်တွင် ကျွန်တော် အလုပ်များနေတယ်။,,everyday
+phrase,in the meantime,ထိုအတောအတွင်း,"Dinner is cooking; in the meantime, set the table.",ညစာ ချက်နေတယ်၊ ထိုအတောအတွင်း စားပွဲ ပြင်ထားပါ။,,linking
+phrase,take care of,ပြုစုစောင့်ရှောက်သည်,She takes care of her grandmother.,သူမသည် သူမ၏အဘွားကို ပြုစုစောင့်ရှောက်သည်။,,everyday
+phrase,look forward to,မျှော်လင့်နေသည်,I look forward to seeing you soon.,မကြာမီ သင့်ကို တွေ့ရမည်ကို မျှော်လင့်နေပါသည်။,,everyday
+phrase,get along with,သဟဇာတဖြစ်သည်,She gets along well with her coworkers.,သူမသည် လုပ်ဖော်ကိုင်ဖက်များနှင့် သဟဇာတဖြစ်သည်။,,social
+phrase,run out of,ကုန်သွားသည်,We ran out of milk this morning.,ဒီမနက် နို့ ကုန်သွားတယ်။,,everyday
+phrase,give up,လက်လျှော့သည်,Don't give up on your dreams.,သင်၏အိပ်မက်များကို လက်မလျှော့ပါနှင့်။,,everyday
+phrase,figure out,ဖြေရှင်းတွက်ဆသည်,I can't figure out this problem.,ဒီပြဿနာကို ကျွန်တော် ဖြေရှင်းတွက်ဆမရဘူး။,,everyday
+phrase,come up with,စဉ်းစားတီထွင်သည်,She came up with a great idea.,သူမသည် အကြံကောင်းတစ်ခုကို စဉ်းစားတီထွင်ခဲ့သည်။,,everyday
+phrase,put off,ရွှေ့ဆိုင်းသည်,They put off the meeting until Monday.,သူတို့သည် အစည်းအဝေးကို တနင်္လာနေ့အထိ ရွှေ့ဆိုင်းခဲ့ကြသည်။,,everyday
+phrase,turn down,ငြင်းပယ်သည်,He turned down the job offer.,သူသည် အလုပ်ကမ်းလှမ်းချက်ကို ငြင်းပယ်ခဲ့သည်။,,everyday
+phrase,carry on,ဆက်လုပ်သည်,Please carry on with your work.,သင်၏အလုပ်ကို ဆက်လုပ်ပါ။,,everyday
+phrase,call off,ဖျက်သိမ်းသည်,They called off the game due to rain.,မိုးရွာသဖြင့် သူတို့သည် ပွဲကို ဖျက်သိမ်းခဲ့ကြသည်။,,everyday
+phrase,look after,စောင့်ရှောက်သည်,Can you look after my dog this weekend?,ဒီစနေတနင်္ဂနွေမှာ ကျွန်တော့်ခွေးကို စောင့်ရှောက်ပေးနိုင်မလား။,,everyday
+phrase,break down,ပျက်စီးသွားသည်,My car broke down on the highway.,ကျွန်တော့်ကားသည် အဝေးပြေးလမ်းပေါ်တွင် ပျက်စီးသွားခဲ့သည်။,,everyday
+phrase,show up,ရောက်လာသည်,He didn't show up for the meeting.,သူသည် အစည်းအဝေးသို့ မရောက်လာခဲ့ပါ။,,everyday
+phrase,work out,အဆင်ပြေသွားသည်,I hope everything works out well.,အားလုံး ကောင်းစွာ အဆင်ပြေသွားမည်ဟု မျှော်လင့်ပါသည်။,,everyday
+phrase,point out,ထောက်ပြသည်,She pointed out my mistake.,သူမသည် ကျွန်တော့်အမှားကို ထောက်ပြခဲ့သည်။,,everyday
+phrase,sort out,ဖြေရှင်းသည်,We need to sort out this problem.,ကျွန်တော်တို့ ဒီပြဿနာကို ဖြေရှင်းရန်လိုသည်။,,everyday
+phrase,set up,တည်ထောင်သည်,They set up a small business.,သူတို့သည် လုပ်ငန်းငယ်တစ်ခု တည်ထောင်ခဲ့ကြသည်။,,business
+phrase,take over,တာဝန်လွှဲယူသည်,She will take over the project.,သူမသည် ပရောဂျက်ကို တာဝန်လွှဲယူမည်။,,business
+phrase,keep in touch,အဆက်အသွယ်ရှိသည်,Let's keep in touch after graduation.,ကျောင်းပြီးပြီးနောက် အဆက်အသွယ်ရှိကြစို့။,,social
+phrase,make sense,အဓိပ္ပာယ်ရှိသည်,Your explanation makes sense.,သင်၏ရှင်းလင်းချက်သည် အဓိပ္ပာယ်ရှိသည်။,,everyday
+phrase,pay attention,အာရုံစိုက်သည်,Please pay attention to the teacher.,ဆရာကို အာရုံစိုက်ပါ။,,everyday
+phrase,change your mind,စိတ်ပြောင်းသည်,She changed her mind at the last minute.,သူမသည် နောက်ဆုံးအချိန်တွင် စိတ်ပြောင်းသွားခဲ့သည်။,,everyday
+phrase,take a break,အနားယူသည်,Let's take a break for ten minutes.,ဆယ်မိနစ် အနားယူကြစို့။,,everyday
+phrase,do me a favor,ကျေးဇူးပြု၍,Could you do me a favor?,ကျွန်တော့်ကို ကျေးဇူးပြု၍ ကူညီနိုင်မလား။,,social
+phrase,never mind,ကိစ္စမရှိပါ,"Never mind, I'll do it myself.",ကိစ္စမရှိပါ၊ ကျွန်တော် ကိုယ်တိုင်လုပ်မယ်။,,social
+phrase,as soon as possible,အမြန်ဆုံး,Please reply as soon as possible.,အမြန်ဆုံး ပြန်ကြားပေးပါ။,,everyday
+phrase,more or less,အနီးစပ်ဆုံး,The work is more or less finished.,အလုပ်က အနီးစပ်ဆုံး ပြီးလုနီးပါးပါ။,,linking
+phrase,once in a while,ရံဖန်ရံခါ,We eat out once in a while.,ကျွန်တော်တို့ ရံဖန်ရံခါ အပြင်ထွက်စားကြတယ်။,,everyday
+phrase,sooner or later,တစ်နေ့ကျရင်,"Sooner or later, the truth will come out.",တစ်နေ့ကျရင် အမှန်တရား ပေါ်လာလိမ့်မယ်။,,linking
+phrase,all of a sudden,ရုတ်တရက်,"All of a sudden, the lights went out.",ရုတ်တရက် မီးများ ပျက်သွားခဲ့သည်။,,linking
+phrase,to be honest,ရိုးရိုးသားသားပြောရရင်,"To be honest, I don't like it.",ရိုးရိုးသားသားပြောရရင် ကျွန်တော် မကြိုက်ဘူး။,,linking
+phrase,keep an eye on,စောင့်ကြည့်သည်,Please keep an eye on the baby.,ကလေးကို စောင့်ကြည့်ပေးပါ။,,everyday
+phrase,get in touch,ဆက်သွယ်သည်,I will get in touch with you tomorrow.,မနက်ဖြန် သင့်ကို ဆက်သွယ်ပါမည်။,,social
+phrase,make a decision,ဆုံးဖြတ်ချက်ချသည်,We must make a decision soon.,ကျွန်တော်တို့ မကြာမီ ဆုံးဖြတ်ချက်ချရမည်။,,everyday
+phrase,take advantage of,အခွင့်ကောင်းယူသည်,Take advantage of this opportunity.,ဒီအခွင့်အရေးကို အခွင့်ကောင်းယူပါ။,,everyday
+phrase,on purpose,တမင်တကာ,He broke it on purpose.,သူသည် ၎င်းကို တမင်တကာ ချိုးဖျက်ခဲ့သည်။,,everyday
+phrase,out of order,ပျက်စီးနေသည်,The elevator is out of order.,ဓာတ်လှေကား ပျက်စီးနေသည်။,,everyday
+phrase,up to date,ခေတ်မီသော,Keep your software up to date.,သင်၏ဆော့ဖ်ဝဲကို ခေတ်မီအောင် ထားပါ။,,everyday
+phrase,in charge of,တာဝန်ခံသည်,She is in charge of the team.,သူမသည် အဖွဲ့ကို တာဝန်ခံသည်။,,business
+phrase,account for,ရှင်းပြသည်,He could not account for the missing money.,သူသည် ပျောက်နေသောငွေကို ရှင်းပြနိုင်ခြင်း မရှိခဲ့ပါ။,,business
+phrase,depend on,မူတည်သည်,Our plan depends on the weather.,ကျွန်တော်တို့၏အစီအစဉ်သည် ရာသီဥတုပေါ် မူတည်သည်။,,everyday
+phrase,deal with,ကိုင်တွယ်ဖြေရှင်းသည်,How do you deal with stress?,စိတ်ဖိစီးမှုကို သင် ဘယ်လိုကိုင်တွယ်ဖြေရှင်းသလဲ။,,everyday
+phrase,focus on,အာရုံစိုက်သည်,Let's focus on the main issue.,အဓိကပြဿနာကို အာရုံစိုက်ကြစို့။,,everyday
+phrase,rely on,အားကိုးသည်,You can rely on me.,သင် ကျွန်တော့်ကို အားကိုးနိုင်ပါတယ်။,,social
+phrase,apply for,လျှောက်ထားသည်,She applied for a scholarship.,သူမသည် ပညာသင်ဆုအတွက် လျှောက်ထားခဲ့သည်။,,everyday
+phrase,look into,စုံစမ်းသည်,The police will look into the case.,ရဲသည် အမှုကို စုံစမ်းမည်။,,everyday
+phrase,catch up,လိုက်မီရန်,I need to catch up on my work.,ကျွန်တော် ကျွန်တော့်အလုပ်ကို လိုက်မီရန် လိုသည်။,,everyday
+phrase,hang out,အတူတူလုပ်သည်,We like to hang out on weekends.,ကျွန်တော်တို့ စနေတနင်္ဂနွေတွေမှာ အတူတူလုပ်ရတာ ကြိုက်တယ်။,,social
+phrase,in the long run,ရေရှည်မှာ,"In the long run, honesty pays off.",ရေရှည်မှာ ရိုးသားမှုက အကျိုးဖြစ်ထွန်းစေသည်။,,linking
+phrase,on time,အချိန်မီ,The train arrived on time.,ရထားသည် အချိန်မီ ရောက်ရှိလာခဲ့သည်။,,everyday
+phrase,get used to,ကျင့်သားရသည်,She got used to the cold weather.,သူမသည် အအေးဓာတ်နှင့် ကျင့်သားရခဲ့သည်။,,everyday
+phrase,take part in,ပါဝင်သည်,Many students took part in the contest.,ကျောင်းသားများစွာ ပြိုင်ပွဲတွင် ပါဝင်ခဲ့ကြသည်။,,social
+phrase,in advance,ကြိုတင်၍,Please book your ticket in advance.,သင်၏လက်မှတ်ကို ကြိုတင်၍ မှာယူပါ။,,travel
+idiom,a piece of cake,အလွန်လွယ်ကူသော,The exam was a piece of cake.,စာမေးပွဲက အလွန်လွယ်ကူပါတယ်။,,difficulty
+idiom,break the ice,ရင်းနှီးအောင်ပြောဆိုသည်,He told a joke to break the ice.,ရင်းနှီးအောင်ပြောဆိုရန် သူ ဟာသတစ်ခု ပြောခဲ့သည်။,,social
+idiom,hit the books,စာအုပ်ကျက်သည်,I need to hit the books before the test.,စာမေးပွဲမတိုင်မီ ကျွန်တော် စာအုပ်ကျက်ရမယ်။,,study
+idiom,under the weather,နေမကောင်းဖြစ်သည်,She is feeling under the weather today.,သူမသည် ဒီနေ့ နေမကောင်းဖြစ်နေသည်။,,health
+idiom,once in a blue moon,ရှားရှားပါးပါး,He visits us once in a blue moon.,သူသည် ရှားရှားပါးပါးမှ ကျွန်တော်တို့ဆီ လာလည်သည်။,,time
+idiom,cost an arm and a leg,အလွန်ဈေးကြီးသည်,That car cost an arm and a leg.,အဲဒီကားက အလွန်ဈေးကြီးတယ်။,,money
+idiom,the ball is in your court,သင့်အလှည့်ဖြစ်သည်,I've done my part; the ball is in your court now.,ကျွန်တော့်တာဝန်ကို လုပ်ပြီးပြီ၊ အခု သင့်အလှည့်ဖြစ်ပြီ။,,social
+idiom,bite the bullet,ရင်ဆိုင်ဖြေရှင်းသည်,She had to bite the bullet and apologize.,သူမသည် ရင်ဆိုင်ဖြေရှင်းပြီး တောင်းပန်ခဲ့ရသည်။,,difficulty
+idiom,hit the nail on the head,အတိအကျမှန်သည်,Your answer hit the nail on the head.,သင်၏အဖြေက အတိအကျမှန်ပါတယ်။,,communication
+idiom,let the cat out of the bag,လျှို့ဝှက်ချက်ပေါက်ကြားစေသည်,He let the cat out of the bag about the party.,ပါတီအကြောင်း သူ လျှို့ဝှက်ချက် ပေါက်ကြားစေခဲ့သည်။,,social
+idiom,spill the beans,လျှို့ဝှက်ချက်ဖွင့်ပြောသည်,"Come on, spill the beans!",လာပါ၊ လျှို့ဝှက်ချက် ဖွင့်ပြောပါ။,,social
+idiom,beat around the bush,အကွေ့အကောက်ပြောနေသည်,Stop beating around the bush and tell me.,အကွေ့အကောက်မပြောနဲ့တော့၊ ကျွန်တော့်ကို ပြောပါ။,,communication
+idiom,call it a day,ဒီနေ့အတွက်ရပ်သည်,We've worked enough; let's call it a day.,အလုပ်လုပ်တာ တော်ပြီ၊ ဒီနေ့အတွက်ရပ်လိုက်ကြစို့။,,work
+idiom,get out of hand,ထိန်းမနိုင်သိမ်းမရဖြစ်သည်,The party got out of hand.,ပါတီက ထိန်းမနိုင်သိမ်းမရဖြစ်သွားတယ်။,,social
+idiom,on the same page,သဘောတူညီသည်,Let's make sure we're on the same page.,ကျွန်တော်တို့ သဘောတူညီကြောင်း သေချာအောင်လုပ်ကြစို့။,,communication
+idiom,peace of mind,စိတ်အေးချမ်းမှု,Insurance gives you peace of mind.,အာမခံက သင့်ကို စိတ်အေးချမ်းမှု ပေးသည်။,,emotions
+idiom,speak of the devil,ပြောတုန်းပါပဲ,"Speak of the devil, here he comes!",ပြောတုန်းပါပဲ၊ သူ ဒီကို ရောက်လာပြီ။,,social
+idiom,the last straw,သည်းခံစိတ်ကုန်စေသောအကြောင်း,His rude remark was the last straw.,သူ၏ရိုင်းစိုင်းသောစကားက သည်းခံစိတ်ကုန်စေသောအကြောင်းဖြစ်ခဲ့သည်။,,emotions
+idiom,once bitten twice shy,တစ်ခါနာ နှစ်ခါသတိ,"After the scam, he was once bitten twice shy.",လိမ်လည်မှုပြီးနောက် သူသည် တစ်ခါနာ နှစ်ခါသတိ ဖြစ်ခဲ့သည်။,,wisdom
+idiom,actions speak louder than words,လုပ်ရပ်က စကားထက်ပိုပြောတတ်,He helps quietly; actions speak louder than words.,သူ တိတ်တဆိတ်ကူညီတယ်၊ လုပ်ရပ်က စကားထက်ပိုပြောတတ်တယ်။,,wisdom
+idiom,better late than never,နောက်ကျတာမျိုးလည်းကောင်းပါတယ်,He apologized at last; better late than never.,သူ နောက်ဆုံးတော့ တောင်းပန်တယ်၊ နောက်ကျတာမျိုးလည်းကောင်းပါတယ်။,,wisdom
+idiom,the early bird catches the worm,စောစောလုပ်သူ အကျိုးရ,Arrive early; the early bird catches the worm.,စောစောရောက်ပါ၊ စောစောလုပ်သူ အကျိုးရတယ်။,,wisdom
+idiom,every cloud has a silver lining,ဆိုးကျိုးတိုင်းမှာ ကောင်းကျိုးရှိတတ်,Don't worry; every cloud has a silver lining.,မပူပါနဲ့၊ ဆိုးကျိုးတိုင်းမှာ ကောင်းကျိုးရှိတတ်တယ်။,,wisdom
+idiom,kill two birds with one stone,တစ်ချက်ခုတ်နှစ်ချက်ပြတ်,"By walking to work, I kill two birds with one stone.",အလုပ်ကို လမ်းလျှောက်သွားခြင်းဖြင့် တစ်ချက်ခုတ်နှစ်ချက်ပြတ် ဖြစ်သည်။,,wisdom
+idiom,don't judge a book by its cover,အပြင်ပန်းကိုကြည့်ပြီး မဆုံးဖြတ်ပါနှင့်,"He seems quiet, but don't judge a book by its cover.",သူ တိတ်ဆိတ်ပုံရပေမယ့် အပြင်ပန်းကိုကြည့်ပြီး မဆုံးဖြတ်ပါနှင့်။,,wisdom
+idiom,when pigs fly,ဘယ်တော့မှမဖြစ်နိုင်ဘူး,He'll clean his room when pigs fly.,သူ အခန်းသန့်ရှင်းရေးလုပ်မယ်ဆိုတာ ဘယ်တော့မှမဖြစ်နိုင်ဘူး။,,humor
+idiom,burn the midnight oil,ညဉ့်နက်တိုင်ကြိုးစားသည်,She burned the midnight oil to finish the report.,အစီရင်ခံစာပြီးအောင် သူမ ညဉ့်နက်တိုင်ကြိုးစားခဲ့သည်။,,work
+idiom,throw in the towel,လက်လျှော့အရှုံးပေးသည်,"After many tries, he threw in the towel.",ကြိမ်ဖန်များစွာ ကြိုးစားပြီးနောက် သူ လက်လျှော့အရှုံးပေးခဲ့သည်။,,difficulty
+idiom,pull someone's leg,လူနောက်ပြောင်သည်,"Relax, I'm just pulling your leg.",စိတ်အေးအေးထားပါ၊ ကျွန်တော် လူနောက်ပြောင်နေတာပါ။,,humor
+idiom,a blessing in disguise,ဆိုးပုံရပေမယ့်ကောင်းသည်,Losing that job was a blessing in disguise.,အဲဒီအလုပ်ဆုံးရှုံးတာက ဆိုးပုံရပေမယ့်ကောင်းတာပါ။,,wisdom
+idiom,add fuel to the fire,မီးလောင်ရာလေပင့်သည်,His comment only added fuel to the fire.,သူ၏မှတ်ချက်က မီးလောင်ရာလေပင့်ရုံသာ ဖြစ်ခဲ့သည်။,,conflict
+idiom,back to square one,ပြန်စရသည်,"The plan failed, so we're back to square one.",အစီအစဉ် မအောင်မြင်တော့ ကျွန်တော်တို့ ပြန်စရသည်။,,difficulty
+idiom,the best of both worlds,နှစ်ဖက်စလုံးကောင်းသည်,Working from home gives me the best of both worlds.,အိမ်ကနေအလုပ်လုပ်ခြင်းက ကျွန်တော့်ကို နှစ်ဖက်စလုံးကောင်းစေတယ်။,,work
+idiom,easy does it,ဖြည်းဖြည်းနဲ့လုပ်ပါ,"Easy does it, don't rush.",ဖြည်းဖြည်းနဲ့လုပ်ပါ၊ မလောနဲ့။,,advice
+idiom,go the extra mile,အပိုကြိုးစားသည်,She always goes the extra mile for her customers.,သူမသည် ဖောက်သည်များအတွက် အမြဲ အပိုကြိုးစားသည်။,,work
+idiom,in the same boat,အခြေအနေတူညီသည်,We are all in the same boat here.,ဒီမှာ ကျွန်တော်တို့အားလုံး အခြေအနေတူညီဖြစ်နေတယ်။,,social
+idiom,make a long story short,အတိုချုပ်ပြောရရင်,"To make a long story short, we won.",အတိုချုပ်ပြောရရင် ကျွန်တော်တို့ အနိုင်ရခဲ့တယ်။,,communication
+idiom,no pain no gain,ပင်ပန်းမှအကျိုးရ,"Keep training; no pain, no gain.",ဆက်လေ့ကျင့်ပါ၊ ပင်ပန်းမှအကျိုးရတယ်။,,wisdom
+idiom,so far so good,သိပ်အဆင်ပြေပါတယ်,"How is the project? So far, so good.",ပရောဂျက်က ဘယ်လိုလဲ။ သိပ်အဆင်ပြေပါတယ်။,,work
+idiom,time flies,အချိန်ကုန်သွားတယ်,Time flies when you're having fun.,ပျော်နေတဲ့အခါ အချိန်ကုန်သွားတယ်။,,time
+idiom,you can say that again,မှန်ပါတယ်,This food is amazing. You can say that again!,ဒီအစားအစာက အရမ်းကောင်းတယ်။ မှန်ပါတယ်။,,social
+idiom,a dime a dozen,အများကြီးရှိသည်,Cheap souvenirs are a dime a dozen here.,ဈေးပေါ အမှတ်တရပစ္စည်းတွေ ဒီမှာ အများကြီးရှိတယ်။,,money
+idiom,cut corners,အရည်အသွေးလျှော့သည်,Don't cut corners on safety.,ဘေးကင်းရေးမှာ အရည်အသွေးမလျှော့ပါနဲ့။,,work
+idiom,barking up the wrong tree,လွဲမှားစွာစွပ်စွဲသည်,"If you blame me, you're barking up the wrong tree.",ကျွန်တော့်ကို အပြစ်တင်ရင် မင်း လွဲမှားစွာစွပ်စွဲနေတာ။,,conflict
+idiom,the grass is always greener on the other side,သူများဟာပိုကောင်းသလိုထင်ရ,"He envies others, but the grass is always greener on the other side.",သူ သူများကို မနာလိုတယ်၊ ဒါပေမယ့် သူများဟာပိုကောင်းသလိုထင်ရတာပါ။,,wisdom
+idiom,give the benefit of the doubt,အကောင်းဘက်ကယူဆသည်,I'll give you the benefit of the doubt this time.,ဒီတစ်ခါတော့ မင်းကို အကောင်းဘက်ကယူဆမယ်။,,social
+idiom,get a taste of your own medicine,ကိုယ်လုပ်သလိုပြန်ခံရ,"When they ignored him, he got a taste of his own medicine.",သူတို့ သူ့ကို လျစ်လျူရှုတဲ့အခါ သူ ကိုယ်လုပ်သလိုပြန်ခံရတယ်။,,wisdom
+idiom,cross that bridge when you come to it,ရောက်မှဖြေရှင်းမယ်,Don't worry about it now; cross that bridge when you come to it.,အခု မပူပါနဲ့၊ ရောက်မှဖြေရှင်းပါ။,,advice
+idiom,it takes two to tango,တစ်ဖက်တည်းအပြစ်မဟုတ်,Don't blame only her; it takes two to tango.,သူမတစ်ယောက်တည်းကို အပြစ်မတင်နဲ့၊ တစ်ဖက်တည်းအပြစ်မဟုတ်ဘူး။,,conflict
+idiom,in hot water,ဒုက္ခရောက်သည်,He is in hot water for being late again.,သူသည် နောက်တစ်ခါ နောက်ကျသဖြင့် ဒုက္ခရောက်နေသည်။,,difficulty
+idiom,a fish out of water,အဆင်မပြေဖြစ်သည်,"At the fancy party, she felt like a fish out of water.",အဆင့်မြင့်ပါတီမှာ သူမ အဆင်မပြေဖြစ်ခဲ့ရသည်။,,social

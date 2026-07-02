@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/*
+  Warm, learner-friendly palette: soft cream canvas, terracotta accent,
+  cozy neutrals. Adjust these tokens to re-skin the whole app.
+*/
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: #fdf6ec;
+  --color-sand: #f5e6d3;
+  --color-ink: #3a2e28;
+  --color-muted: #8a7a6d;
+  --color-accent: #e2725b; /* terracotta */
+  --color-accent-soft: #f4a259;
+  --color-card: #fffaf3;
+
+  --font-sans: var(--font-nunito);
+  --font-burmese: var(--font-noto-myanmar);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Burmese text renders poorly in Latin fonts — always use the Myanmar font. */
+.font-my {
+  font-family: var(--font-burmese), var(--font-sans), sans-serif;
+}
+
+/* 3D flip helpers for the flashcard. */
+.perspective {
+  perspective: 1200px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }
