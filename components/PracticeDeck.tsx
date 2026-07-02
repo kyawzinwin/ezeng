@@ -30,6 +30,7 @@ export default function PracticeDeck({ cards }: { cards: Card[] }) {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [order, setOrder] = useState<string[] | null>(null);
+  const [query, setQuery] = useState("");
 
   // Shuffle once on mount. Done in an effect (not during render) so the server
   // and client agree on the initial HTML and hydration doesn't mismatch.
@@ -38,18 +39,36 @@ export default function PracticeDeck({ cards }: { cards: Card[] }) {
   }, [cards]);
 
   const deck = useMemo(() => {
-    const filtered =
-      type === "all" ? cards : cards.filter((c) => c.type === type);
+    const q = query.trim().toLowerCase();
+    const filtered = cards.filter((c) => {
+      if (type !== "all" && c.type !== type) return false;
+      if (!q) return true;
+      return (
+        c.english.toLowerCase().includes(q) ||
+        c.burmese.toLowerCase().includes(q) ||
+        (c.category ?? "").toLowerCase().includes(q)
+      );
+    });
     if (!order) return filtered;
     const byId = new Map(filtered.map((c) => [c.id, c]));
     return order.map((id) => byId.get(id)).filter(Boolean) as Card[];
-  }, [cards, type, order]);
+  }, [cards, type, order, query]);
 
   const current = deck[index];
+  // The deck is shuffled in a mount effect, so `order` stays null until then.
+  // Gate the card on it to avoid a flash of the un-shuffled order on load.
+  const ready = order !== null;
 
   // Keep the shuffled order when switching modes; just jump back to the start.
   function reset(nextType?: Mode) {
     if (nextType) setType(nextType);
+    setIndex(0);
+    setFlipped(false);
+  }
+
+  // Searching changes the deck, so return to the first matching card.
+  function changeQuery(next: string) {
+    setQuery(next);
     setIndex(0);
     setFlipped(false);
   }
@@ -62,7 +81,7 @@ export default function PracticeDeck({ cards }: { cards: Card[] }) {
 
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-6">
-      {/* Mode picker */}
+      {/* Type filters */}
       <div className="flex flex-wrap justify-center gap-2">
         {MODES.map((t) => (
           <button
@@ -79,21 +98,53 @@ export default function PracticeDeck({ cards }: { cards: Card[] }) {
         ))}
       </div>
 
-      {/* Direction toggle */}
-      <div className="flex items-center justify-center gap-3 text-sm">
-        <span className="text-muted">Show first:</span>
-        <button
-          onClick={() =>
-            setDirection((d) => (d === "en-my" ? "my-en" : "en-my"))
-          }
-          className="rounded-full border border-sand bg-card px-4 py-1.5 font-semibold text-ink transition hover:border-accent"
-        >
-          {direction === "en-my" ? "English → မြန်မာ" : "မြန်မာ → English"}
-        </button>
+      {/* Search */}
+      <input
+        type="search"
+        value={query}
+        onChange={(e) => changeQuery(e.target.value)}
+        placeholder="Search words, phrases, idioms…"
+        className="w-full rounded-full border border-sand bg-card px-4 py-2 text-sm text-ink outline-none focus:border-accent"
+      />
+
+      {/* Language: which side shows first */}
+      <div className="flex justify-center">
+        <div className="inline-flex rounded-full border border-sand bg-card p-1">
+          <button
+            onClick={() => setDirection("en-my")}
+            aria-pressed={direction === "en-my"}
+            className={`rounded-full px-4 py-1.5 text-sm font-semibold transition ${
+              direction === "en-my"
+                ? "bg-[#f6d3a9] text-ink"
+                : "text-muted hover:text-ink"
+            }`}
+          >
+            English
+          </button>
+          <button
+            onClick={() => setDirection("my-en")}
+            aria-pressed={direction === "my-en"}
+            className={`font-my rounded-full px-4 py-1.5 text-sm font-semibold transition ${
+              direction === "my-en"
+                ? "bg-[#f6d3a9] text-ink"
+                : "text-muted hover:text-ink"
+            }`}
+          >
+            မြန်မာ
+          </button>
+        </div>
       </div>
 
       {/* Card */}
-      {current ? (
+      {!ready ? (
+        <div className="flex h-72 items-center justify-center rounded-3xl border border-sand bg-card shadow-lg shadow-black/5 sm:h-80">
+          <div
+            className="h-8 w-8 animate-spin rounded-full border-2 border-sand border-t-accent"
+            role="status"
+            aria-label="Shuffling cards"
+          />
+        </div>
+      ) : current ? (
         <Flashcard
           key={current.id}
           card={current}
@@ -102,13 +153,17 @@ export default function PracticeDeck({ cards }: { cards: Card[] }) {
           onFlip={() => setFlipped((f) => !f)}
         />
       ) : (
-        <div className="flex h-72 items-center justify-center rounded-3xl border border-dashed border-sand text-muted sm:h-80">
-          {type === "all" ? "No cards yet." : `No ${MODE_LABELS[type].toLowerCase()} yet.`}
+        <div className="flex h-72 items-center justify-center rounded-3xl border border-dashed border-sand px-6 text-center text-muted sm:h-80">
+          {query
+            ? "No cards match your search."
+            : type === "all"
+              ? "No cards yet."
+              : `No ${MODE_LABELS[type].toLowerCase()} yet.`}
         </div>
       )}
 
       {/* Controls */}
-      {deck.length > 0 && (
+      {ready && deck.length > 0 && (
         <div className="flex items-center justify-center gap-3">
           <button
             onClick={() => go(-1)}
