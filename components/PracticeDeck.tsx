@@ -98,15 +98,6 @@ export default function PracticeDeck({ cards }: { cards: Card[] }) {
         ))}
       </div>
 
-      {/* Search */}
-      <input
-        type="search"
-        value={query}
-        onChange={(e) => changeQuery(e.target.value)}
-        placeholder="Search words, phrases, idioms…"
-        className="w-full rounded-full border border-sand bg-card px-4 py-2 text-sm text-ink outline-none focus:border-accent"
-      />
-
       {/* Language: which side shows first */}
       <div className="flex justify-center">
         <div className="inline-flex rounded-full border border-sand bg-card p-1">
@@ -115,7 +106,7 @@ export default function PracticeDeck({ cards }: { cards: Card[] }) {
             aria-pressed={direction === "en-my"}
             className={`rounded-full px-4 py-1.5 text-sm font-semibold transition ${
               direction === "en-my"
-                ? "bg-[#f6d3a9] text-ink"
+                ? "bg-accent-soft/30 text-ink"
                 : "text-muted hover:text-ink"
             }`}
           >
@@ -126,7 +117,7 @@ export default function PracticeDeck({ cards }: { cards: Card[] }) {
             aria-pressed={direction === "my-en"}
             className={`font-my rounded-full px-4 py-1.5 text-sm font-semibold transition ${
               direction === "my-en"
-                ? "bg-[#f6d3a9] text-ink"
+                ? "bg-accent-soft/30 text-ink"
                 : "text-muted hover:text-ink"
             }`}
           >
@@ -134,6 +125,15 @@ export default function PracticeDeck({ cards }: { cards: Card[] }) {
           </button>
         </div>
       </div>
+
+      {/* Search */}
+      <input
+        type="search"
+        value={query}
+        onChange={(e) => changeQuery(e.target.value)}
+        placeholder="Search words, phrases, idioms…"
+        className="w-full rounded-full border border-sand bg-card px-4 py-2 text-sm text-ink outline-none focus:border-accent"
+      />
 
       {/* Card */}
       {!ready ? (

@@ -2,7 +2,21 @@
 
 import { motion } from "framer-motion";
 import { playPronunciation } from "@/lib/pronunciation";
-import type { Card, Direction } from "@/lib/types";
+import type { Card, CardType, Direction } from "@/lib/types";
+
+const TYPE_LABELS: Record<CardType, string> = {
+  word: "Word",
+  phrase: "Phrase",
+  idiom: "Idiom",
+};
+
+function TypeTag({ type }: { type: CardType }) {
+  return (
+    <span className="absolute left-5 top-4 rounded-full bg-accent-soft/30 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-widest text-accent">
+      {TYPE_LABELS[type]}
+    </span>
+  );
+}
 
 interface Face {
   label: string;
@@ -108,12 +122,14 @@ export default function Flashcard({
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         <div className="backface-hidden absolute inset-0 rounded-3xl border border-sand bg-card shadow-lg shadow-black/5">
+          <TypeTag type={card.type} />
           <FaceContent face={front} />
           <span className="absolute bottom-4 right-5 text-xs text-muted">
             tap to flip
           </span>
         </div>
         <div className="backface-hidden rotate-y-180 absolute inset-0 rounded-3xl border border-accent-soft/40 bg-card shadow-lg shadow-black/5">
+          <TypeTag type={card.type} />
           <FaceContent face={back} />
         </div>
       </motion.div>
