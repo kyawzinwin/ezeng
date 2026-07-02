@@ -10,9 +10,8 @@ export default async function Home() {
         <h1 className="text-4xl font-extrabold tracking-tight text-ink">
           Ez<span className="text-accent">Eng</span>
         </h1>
-        <p className="mx-auto mt-3 max-w-md text-muted">
-          Learn English words, phrases, and idioms — with Burmese. Tap a card to
-          flip it. No login needed.
+        <p className="font-my mx-auto mt-3 max-w-md text-lg leading-relaxed text-muted">
+          လွယ်ကူလေ့လာ အင်္ဂလိပ်စာ
         </p>
       </header>
 

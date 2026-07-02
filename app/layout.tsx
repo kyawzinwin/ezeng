@@ -29,7 +29,20 @@ export default function RootLayout({
       lang="en"
       className={`${nunito.variable} ${notoMyanmar.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <footer className="mt-auto border-t border-sand py-6 text-center text-sm text-muted">
+          © {new Date().getFullYear()}{" "}
+          <a
+            href="https://github.com/kyawzinwin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-ink transition hover:text-accent"
+          >
+            Kyaw Zin Win
+          </a>
+        </footer>
+      </body>
     </html>
   );
 }
