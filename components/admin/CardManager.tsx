@@ -1,11 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { fetchPronunciation } from "@/lib/pronunciation";
+import { formatCategory } from "@/lib/format";
 import {
   CARD_TYPES,
+  CATEGORIES,
   type Card,
   type CardInput,
   type CardType,
@@ -26,12 +27,9 @@ const PAGE_SIZE = 10;
 
 export default function CardManager({
   initialCards,
-  email,
 }: {
   initialCards: Card[];
-  email: string;
 }) {
-  const router = useRouter();
   const supabase = createClient();
   const [cards, setCards] = useState<Card[]>(initialCards);
   const [form, setForm] = useState<CardInput>(EMPTY);
@@ -162,11 +160,6 @@ export default function CardManager({
     }
   }
 
-  async function signOut() {
-    await supabase.auth.signOut();
-    router.refresh();
-  }
-
   // Filter by type + free-text search across english, burmese, and category.
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -185,7 +178,10 @@ export default function CardManager({
   // Clamp during render so a shrinking result set (e.g. after delete) can't
   // leave us stranded on an out-of-range page.
   const safePage = Math.min(page, totalPages);
-  const paged = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
+  const paged = filtered.slice(
+    (safePage - 1) * PAGE_SIZE,
+    safePage * PAGE_SIZE,
+  );
 
   function changeFilter(next: CardType | "all") {
     setFilter(next);
@@ -199,125 +195,134 @@ export default function CardManager({
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex items-center justify-between text-sm text-muted">
-        <span>{email}</span>
-        <button onClick={signOut} className="text-accent hover:underline">
-          Sign out
-        </button>
+      {/* Header: title on the left, add button on the right — one line */}
+      <div className="flex items-center justify-between gap-4">
+        <div>
+          <h2 className="font-extrabold text-ink">All cards</h2>
+          <p className="text-xs text-muted">{cards.length} total</p>
+        </div>
+        {!showForm && (
+          <button
+            type="button"
+            onClick={startAdd}
+            className="shrink-0 rounded-lg bg-accent px-5 py-2 font-semibold text-white transition hover:opacity-90"
+          >
+            ＋ Add new card
+          </button>
+        )}
       </div>
-
-      {/* Add-new button — shown only when the form is hidden */}
-      {!showForm && (
-        <button
-          type="button"
-          onClick={startAdd}
-          className="self-start rounded-lg bg-accent px-5 py-2 font-semibold text-white transition hover:opacity-90"
-        >
-          ＋ Add new card
-        </button>
-      )}
 
       {/* Add / edit form — toggled by the button above */}
       {showForm && (
-      <form
-        onSubmit={onSubmit}
-        className="flex flex-col gap-4 rounded-2xl border border-sand bg-card p-6"
-      >
-        <h2 className="font-bold text-ink">
-          {editingId ? "Edit card" : "Add a new card"}
-        </h2>
+        <form
+          onSubmit={onSubmit}
+          className="flex flex-col gap-4 rounded-2xl border border-sand bg-card p-6"
+        >
+          <h2 className="font-bold text-ink">
+            {editingId ? "Edit card" : "Add a new card"}
+          </h2>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <label className="flex flex-col gap-1 text-sm text-muted">
-            Type
-            <select
-              value={form.type}
-              onChange={(e) => changeType(e.target.value as CardType)}
-              className="rounded-lg border border-sand bg-cream px-3 py-2 text-ink outline-none focus:border-accent"
-            >
-              {CARD_TYPES.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
-          </label>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="flex flex-col gap-1 text-sm text-muted">
+              Type
+              <select
+                value={form.type}
+                onChange={(e) => changeType(e.target.value as CardType)}
+                className="rounded-lg border border-sand bg-cream px-3 py-2 text-ink outline-none focus:border-accent"
+              >
+                {CARD_TYPES.map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
+                ))}
+              </select>
+            </label>
 
-          <Field
-            label="Category (optional)"
-            value={form.category ?? ""}
-            onChange={(v) => update("category", v)}
-          />
-          <Field
-            label="English"
-            required
-            value={form.english}
-            onChange={(v) => update("english", v)}
-          />
-          <Field
-            label="Burmese"
-            required
-            burmese
-            value={form.burmese}
-            onChange={(v) => update("burmese", v)}
-          />
+            <label className="flex flex-col gap-1 text-sm text-muted">
+              Category (optional)
+              <select
+                value={form.category ?? ""}
+                onChange={(e) => update("category", e.target.value)}
+                className="rounded-lg border border-sand bg-cream px-3 py-2 text-ink outline-none focus:border-accent"
+              >
+                <option value="">— none —</option>
+                {CATEGORIES.map((c) => (
+                  <option key={c} value={c}>
+                    {formatCategory(c)}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <Field
+              label="English"
+              required
+              value={form.english}
+              onChange={(v) => update("english", v)}
+            />
+            <Field
+              label="Burmese"
+              required
+              burmese
+              value={form.burmese}
+              onChange={(v) => update("burmese", v)}
+            />
+            {form.type === "word" && (
+              <>
+                <Field
+                  label="Pronunciation / IPA (optional)"
+                  value={form.pronunciation ?? ""}
+                  onChange={(v) => update("pronunciation", v)}
+                />
+                <Field
+                  label="Audio URL (optional)"
+                  value={form.audio_url ?? ""}
+                  onChange={(v) => update("audio_url", v)}
+                />
+              </>
+            )}
+            <Field
+              label="Example — English (optional)"
+              value={form.example_en ?? ""}
+              onChange={(v) => update("example_en", v)}
+            />
+            <Field
+              label="Example — Burmese (optional)"
+              burmese
+              value={form.example_my ?? ""}
+              onChange={(v) => update("example_my", v)}
+            />
+          </div>
+
           {form.type === "word" && (
-            <>
-              <Field
-                label="Pronunciation / IPA (optional)"
-                value={form.pronunciation ?? ""}
-                onChange={(v) => update("pronunciation", v)}
-              />
-              <Field
-                label="Audio URL (optional)"
-                value={form.audio_url ?? ""}
-                onChange={(v) => update("audio_url", v)}
-              />
-            </>
+            <button
+              type="button"
+              onClick={onFetchPronunciation}
+              disabled={fetching || !form.english.trim()}
+              className="self-start text-sm font-semibold text-accent hover:underline disabled:opacity-40 disabled:no-underline"
+            >
+              {fetching ? "Fetching…" : "↯ Fetch pronunciation from dictionary"}
+            </button>
           )}
-          <Field
-            label="Example — English (optional)"
-            value={form.example_en ?? ""}
-            onChange={(v) => update("example_en", v)}
-          />
-          <Field
-            label="Example — Burmese (optional)"
-            burmese
-            value={form.example_my ?? ""}
-            onChange={(v) => update("example_my", v)}
-          />
-        </div>
 
-        {form.type === "word" && (
-          <button
-            type="button"
-            onClick={onFetchPronunciation}
-            disabled={fetching || !form.english.trim()}
-            className="self-start text-sm font-semibold text-accent hover:underline disabled:opacity-40 disabled:no-underline"
-          >
-            {fetching ? "Fetching…" : "↯ Fetch pronunciation from dictionary"}
-          </button>
-        )}
+          {error && <p className="text-sm text-accent">{error}</p>}
 
-        {error && <p className="text-sm text-accent">{error}</p>}
-
-        <div className="flex gap-3">
-          <button
-            type="submit"
-            disabled={busy}
-            className="rounded-lg bg-accent px-5 py-2 font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
-          >
-            {busy ? "Saving…" : editingId ? "Update card" : "Add card"}
-          </button>
-          <button
-            type="button"
-            onClick={cancelEdit}
-            className="rounded-lg bg-sand px-5 py-2 font-semibold text-ink"
-          >
-            {editingId ? "Cancel" : "Close"}
-          </button>
-        </div>
-      </form>
+          <div className="flex gap-3">
+            <button
+              type="submit"
+              disabled={busy}
+              className="rounded-lg bg-accent px-5 py-2 font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
+            >
+              {busy ? "Saving…" : editingId ? "Update card" : "Add card"}
+            </button>
+            <button
+              type="button"
+              onClick={cancelEdit}
+              className="rounded-lg bg-sand px-5 py-2 font-semibold text-ink"
+            >
+              {editingId ? "Cancel" : "Close"}
+            </button>
+          </div>
+        </form>
       )}
 
       {/* List */}
@@ -328,7 +333,7 @@ export default function CardManager({
             type="search"
             value={query}
             onChange={(e) => changeQuery(e.target.value)}
-            placeholder="Search English, Burmese, or category…"
+            placeholder="Search.."
             className="w-full rounded-lg border border-sand bg-card px-4 py-2 text-ink outline-none focus:border-accent"
           />
         </div>
@@ -365,7 +370,7 @@ export default function CardManager({
                 <p className="truncate font-semibold text-ink">
                   {card.english}
                 </p>
-                <p className="font-my truncate text-sm text-muted">
+                <p className="font-my truncate text-sm leading-8 text-muted">
                   {card.burmese}
                 </p>
               </div>

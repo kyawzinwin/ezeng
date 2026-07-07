@@ -1,3 +1,4 @@
+import AnnouncementsWidget from "@/components/AnnouncementsWidget";
 import PracticeDeck from "@/components/PracticeDeck";
 import { getCards } from "@/lib/cards";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
@@ -41,6 +42,8 @@ export default async function Home() {
           လွယ်ကူလေ့လာ အင်္ဂလိပ်စာ
         </p>
       </header>
+
+      <AnnouncementsWidget />
 
       <PracticeDeck cards={cards} />
     </main>

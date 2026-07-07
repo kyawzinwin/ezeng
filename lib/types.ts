@@ -2,6 +2,17 @@ export type CardType = "word" | "phrase" | "idiom";
 
 export const CARD_TYPES: CardType[] = ["word", "phrase", "idiom"];
 
+/** Canonical category set. Keep small; add here to introduce a new one. */
+export const CATEGORIES = [
+  "everyday",
+  "conversation",
+  "work-study",
+  "people",
+  "feelings",
+  "travel",
+  "food-shopping",
+] as const;
+
 /** Learning direction shown on the front of the card. */
 export type Direction = "en-my" | "my-en";
 
@@ -21,3 +32,20 @@ export interface Card {
 
 /** Shape used when creating/editing in the admin area. */
 export type CardInput = Omit<Card, "id" | "created_at" | "updated_at">;
+
+/** Editorial "what's new" post — separate from cards, written by hand. */
+export interface Announcement {
+  id: string;
+  title: string;
+  body: string | null;
+  category: string | null;
+  published: boolean;
+  published_on: string; // YYYY-MM-DD
+  created_at?: string;
+  updated_at?: string;
+}
+
+export type AnnouncementInput = Omit<
+  Announcement,
+  "id" | "created_at" | "updated_at"
+>;

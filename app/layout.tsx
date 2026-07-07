@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Link from "next/link";
 import { Nunito, Noto_Sans_Myanmar } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
@@ -76,16 +77,25 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
-        <footer className="mt-auto border-t border-sand py-6 text-center text-sm text-muted">
-          © {new Date().getFullYear()}{" "}
-          <a
-            href="https://github.com/kyawzinwin"
-            target="_blank"
-            rel="noopener noreferrer"
+        <footer className="mt-auto flex flex-wrap items-center justify-center gap-x-3 gap-y-1 border-t border-sand py-6 text-center text-sm text-muted">
+          <Link
+            href="/announcements"
             className="font-semibold text-ink transition hover:text-accent"
           >
-            Kyaw
-          </a>
+            Announcements
+          </Link>
+          <span aria-hidden="true">·</span>
+          <p>
+            © {new Date().getFullYear()}{" "}
+            <a
+              href="https://github.com/kyawzinwin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-ink transition hover:text-accent"
+            >
+              Kyaw
+            </a>
+          </p>
         </footer>
       </body>
       {process.env.NEXT_PUBLIC_GA_ID && (
