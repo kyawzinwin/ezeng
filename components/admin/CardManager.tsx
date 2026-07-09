@@ -1,9 +1,17 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { fetchAllCards } from "@/lib/cards-query";
 import { fetchPronunciation } from "@/lib/pronunciation";
 import { formatCategory } from "@/lib/format";
+import {
+  CSV_HEADERS,
+  cardsToCsv,
+  csvTemplate,
+  parseCardsCsv,
+  type ImportRow,
+} from "@/lib/csv";
 import {
   CARD_TYPES,
   CATEGORIES,
@@ -11,6 +19,15 @@ import {
   type CardInput,
   type CardType,
 } from "@/lib/types";
+
+const MAX_IMPORT_BYTES = 5 * 1024 * 1024; // 5MB — sanity check, not a hard ceiling
+const IMPORT_BATCH_SIZE = 200;
+
+function chunk<T>(items: T[], size: number): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < items.length; i += size) out.push(items.slice(i, i + size));
+  return out;
+}
 
 const EMPTY: CardInput = {
   type: "word",
@@ -41,6 +58,12 @@ export default function CardManager({
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [showForm, setShowForm] = useState(false);
+  const [importPreview, setImportPreview] = useState<{
+    toInsert: ImportRow[];
+    toUpdate: ImportRow[];
+    errors: string[];
+  } | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   function update<K extends keyof CardInput>(key: K, value: CardInput[K]) {
     setForm((f) => ({ ...f, [key]: value }));
@@ -87,11 +110,7 @@ export default function CardManager({
   }
 
   async function refresh() {
-    const { data } = await supabase
-      .from("cards")
-      .select("*")
-      .order("created_at", { ascending: false });
-    setCards((data as Card[]) ?? []);
+    setCards(await fetchAllCards(supabase));
   }
 
   async function onSubmit(e: React.FormEvent) {
@@ -135,6 +154,79 @@ export default function CardManager({
       setError(error.message);
       return;
     }
+    await refresh();
+  }
+
+  function onDownloadTemplate() {
+    const blob = new Blob([csvTemplate()], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "cards-template.csv";
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function onExport() {
+    const blob = new Blob([cardsToCsv(cards)], {
+      type: "text/csv;charset=utf-8",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `cards-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  async function onImportFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    e.target.value = ""; // allow re-selecting the same file later
+    if (!file) return;
+    setError(null);
+
+    if (file.size > MAX_IMPORT_BYTES) {
+      setError(
+        `File is too large (max ${MAX_IMPORT_BYTES / 1024 / 1024}MB).`,
+      );
+      return;
+    }
+
+    const { rows, errors } = parseCardsCsv(await file.text());
+    const existingIds = new Set(cards.map((c) => c.id));
+    setImportPreview({
+      toUpdate: rows.filter((r) => r.id && existingIds.has(r.id)),
+      toInsert: rows.filter((r) => !r.id || !existingIds.has(r.id)),
+      errors,
+    });
+  }
+
+  async function confirmImport() {
+    if (!importPreview) return;
+    setBusy(true);
+    setError(null);
+
+    for (const batch of chunk(importPreview.toInsert, IMPORT_BATCH_SIZE)) {
+      const { error } = await supabase.from("cards").insert(batch);
+      if (error) {
+        setError(error.message);
+        setBusy(false);
+        return;
+      }
+    }
+    for (const batch of chunk(importPreview.toUpdate, IMPORT_BATCH_SIZE)) {
+      const { error } = await supabase
+        .from("cards")
+        .upsert(batch, { onConflict: "id" });
+      if (error) {
+        setError(error.message);
+        setBusy(false);
+        return;
+      }
+    }
+
+    setBusy(false);
+    setImportPreview(null);
     await refresh();
   }
 
@@ -202,15 +294,95 @@ export default function CardManager({
           <p className="text-xs text-muted">{cards.length} total</p>
         </div>
         {!showForm && (
-          <button
-            type="button"
-            onClick={startAdd}
-            className="shrink-0 rounded-lg bg-accent px-5 py-2 font-semibold text-white transition hover:opacity-90"
-          >
-            ＋ Add new card
-          </button>
+          <div className="flex shrink-0 gap-2">
+            <button
+              type="button"
+              onClick={onExport}
+              className="rounded-lg bg-sand px-4 py-2 text-sm font-semibold text-ink transition hover:bg-accent-soft/30"
+            >
+              Export CSV
+            </button>
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="rounded-lg bg-sand px-4 py-2 text-sm font-semibold text-ink transition hover:bg-accent-soft/30"
+            >
+              Import CSV
+            </button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".csv,text/csv"
+              className="hidden"
+              onChange={onImportFile}
+            />
+            <button
+              type="button"
+              onClick={startAdd}
+              className="rounded-lg bg-accent px-5 py-2 font-semibold text-white transition hover:opacity-90"
+            >
+              ＋ Add new card
+            </button>
+          </div>
         )}
       </div>
+
+      <p className="text-xs text-muted">
+        CSV columns: {CSV_HEADERS.join(", ")} — id blank = new card, id set =
+        update that card.{" "}
+        <button
+          type="button"
+          onClick={onDownloadTemplate}
+          className="font-semibold text-accent hover:underline"
+        >
+          Download template
+        </button>
+      </p>
+
+      {/* Import preview — shown after a CSV is selected, before anything is written */}
+      {importPreview && (
+        <div className="flex flex-col gap-3 rounded-2xl border border-sand bg-card p-6">
+          <h2 className="font-bold text-ink">Import preview</h2>
+          <p className="text-sm text-muted">
+            {importPreview.toInsert.length} new,{" "}
+            {importPreview.toUpdate.length} updated
+            {importPreview.errors.length > 0 &&
+              `, ${importPreview.errors.length} skipped`}
+          </p>
+          {importPreview.errors.length > 0 && (
+            <ul className="max-h-32 overflow-y-auto text-xs text-accent">
+              {importPreview.errors.map((e, i) => (
+                <li key={i}>{e}</li>
+              ))}
+            </ul>
+          )}
+          {error && <p className="text-sm text-accent">{error}</p>}
+          <div className="flex gap-3">
+            <button
+              type="button"
+              onClick={confirmImport}
+              disabled={
+                busy ||
+                importPreview.toInsert.length +
+                  importPreview.toUpdate.length ===
+                  0
+              }
+              className="rounded-lg bg-accent px-5 py-2 font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
+            >
+              {busy
+                ? "Importing…"
+                : `Import ${importPreview.toInsert.length + importPreview.toUpdate.length} cards`}
+            </button>
+            <button
+              type="button"
+              onClick={() => setImportPreview(null)}
+              className="rounded-lg bg-sand px-5 py-2 font-semibold text-ink"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Add / edit form — toggled by the button above */}
       {showForm && (

@@ -1,6 +1,7 @@
 import { isSupabaseConfigured } from "./supabase/env";
 import { createClient } from "./supabase/server";
 import { SAMPLE_CARDS } from "./sample-data";
+import { fetchAllCards } from "./cards-query";
 import type { Card } from "./types";
 
 /**
@@ -10,16 +11,11 @@ import type { Card } from "./types";
 export async function getCards(): Promise<Card[]> {
   if (!isSupabaseConfigured) return SAMPLE_CARDS;
 
-  const supabase = await createClient();
-  const { data, error } = await supabase
-    .from("cards")
-    .select("*")
-    .order("created_at", { ascending: false });
-
-  if (error) {
-    console.error("Failed to load cards from Supabase:", error.message);
+  try {
+    const supabase = await createClient();
+    return await fetchAllCards(supabase);
+  } catch (error) {
+    console.error("Failed to load cards from Supabase:", error);
     return SAMPLE_CARDS;
   }
-
-  return (data as Card[]) ?? [];
 }
