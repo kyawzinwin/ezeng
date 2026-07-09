@@ -28,6 +28,7 @@ create table if not exists public.cards (
 alter table public.cards add column if not exists audio_url text;
 
 create index if not exists cards_type_idx on public.cards (type);
+create index if not exists cards_created_at_idx on public.cards (created_at desc);
 
 -- Keep updated_at fresh on edits.
 create or replace function public.set_updated_at()
